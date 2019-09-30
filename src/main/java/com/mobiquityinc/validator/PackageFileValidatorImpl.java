@@ -11,7 +11,7 @@ import com.mobiquityinc.util.DelimeterConstants;
 /**
  * This component is responsible for all validations.
  * 
- * @author Mario Ponciano <marioczpn@gmail.com>
+ * @author Mario Ponciano 
  *
  */
 public class PackageFileValidatorImpl implements PackageFileValidator {

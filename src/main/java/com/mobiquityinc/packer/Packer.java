@@ -13,7 +13,7 @@ import com.mobiquityinc.reader.PackageInputReaderImpl;
  * This class will test several packs and it will return the best Item's indexes
  * for each row of the file.
  * 
- * @author Mario Ponciano <marioczpn@gmail.com>
+ * @author Mario Ponciano 
  *
  */
 public class Packer {
@@ -27,9 +27,9 @@ public class Packer {
 	/**
 	 * The method does return the knapsack solution as a String.
 	 * 
-	 * @param absolute path to a test file as a String
+	 * @param fileName absolute path to a test file as a String
 	 * @return the solution as a String
-	 * @throws APIException
+	 * @throws APIException will be thrown if an error comes up.
 	 */
 	public static String pack(String fileName) throws APIException {
 		List<ItemPackage> itemPackageList = reader.readFile(fileName);

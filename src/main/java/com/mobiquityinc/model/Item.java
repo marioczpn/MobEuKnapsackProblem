@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  * The class represents an entity object with (id, weight and cost) for holding
  * items.
  * 
- * @author Mario Ponciano <marioczpn@gmail.com>
+ * @author Mario Ponciano 
  *
  */
 @Builder

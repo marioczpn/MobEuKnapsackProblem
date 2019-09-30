@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 /**
  * The class represents an item's packaged along with the capacity.
  * 
- * @author Mario Ponciano <marioczpn@gmail.com>
+ * @author Mario Ponciano 
  *
  */
 @Builder

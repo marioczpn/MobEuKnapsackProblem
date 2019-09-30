@@ -7,21 +7,23 @@ public interface PackageFileValidator {
 	/**
 	 * Tests whether the file pathname exists.
 	 * 
-	 * @param filePath
+	 * @param filePath is the name of the file.
 	 * @return true if and only if the file pathname exists; and throws exception
 	 *         otherwise
-	 * @throws APIException
+	 * @throws APIException when the input file path is invalid or when the file
+	 *                      contains invalid data
 	 */
 	boolean verifyFileExists(String filePath) throws APIException;
 
 	/**
 	 * Test all item's value whether the package is valid based on constraints.
 	 * 
-	 * @param item
-	 * @param weight
-	 * @param cost
-	 * @param packageWeightLimit
-	 * @throws APIException
+	 * @param item               is an integer
+	 * @param weight             is an integer
+	 * @param cost               is a double
+	 * @param packageWeightLimit is a interger
+	 * @throws APIException when the input file path is invalid or when the file
+	 *                      contains invalid data
 	 */
 	public void validate(int item, int weight, Double cost, int packageWeightLimit) throws APIException;
 
@@ -39,7 +41,6 @@ public interface PackageFileValidator {
 	 * constraint defined.
 	 * 
 	 * @param maxWeight
-	 * @return
 	 * @throws APIException
 	 */
 	void validateMaxItemAmountConstraint(int maxWeight) throws APIException;
@@ -48,26 +49,24 @@ public interface PackageFileValidator {
 	 * Validate if the package don't exceed the dvalid package based on constraint.
 	 * 
 	 * @param cost
+	 * @throws APIException
 	 */
 	void validateMaxCostConstraint(Double cost) throws APIException;
 
 	/**
 	 * Validate if the package has a package weight limit expected.
 	 * 
-	 * @param maxWeight
+	 * @param pkgWeighLimit
 	 * @throws APIException
 	 */
 	void validatePackageWeightLimit(int pkgWeighLimit) throws APIException;
 
-
 	/**
 	 * Validate if the package has a item weight limit expected.
 	 * 
-	 * @param maxWeight
+	 * @param itemWeight
 	 * @throws APIException
 	 */
 	void validateMaxItemWeightConstraint(int itemWeight) throws APIException;
-
-
 
 }

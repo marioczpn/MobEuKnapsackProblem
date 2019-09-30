@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 /**
  * This component is responsible for reading a raw file.
  * 
- * @author Mario Ponciano <marioczpn@gmail.com>
+ * @author Mario Ponciano
  *
  */
 @RequiredArgsConstructor

@@ -1,0 +1,9 @@
+com.mobiquityinc.algorithm
+com.mobiquityinc.exception
+com.mobiquityinc.facade
+com.mobiquityinc.model
+com.mobiquityinc.packer
+com.mobiquityinc.parser
+com.mobiquityinc.reader
+com.mobiquityinc.util
+com.mobiquityinc.validator
