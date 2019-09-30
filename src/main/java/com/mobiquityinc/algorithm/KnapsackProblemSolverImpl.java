@@ -12,6 +12,9 @@ import com.mobiquityinc.model.ItemPackage;
 /**
  * This class is responsible to provide an interface to resolve the knapsack
  * problem based on BranchAndBound algorithm.
+ * 
+ * @author Mario Ponciano
+ *
  */
 public class KnapsackProblemSolverImpl implements KnapsackProblemSolver {
 
