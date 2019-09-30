@@ -15,7 +15,7 @@
     1. For creational patterns were implemented: *Builder* and *Factory*
     1. For structural patterns were implemented: *Facade* and *Composite*
     
-1. **Test/Code begins** 
+1. **Test/Code begins**
 
 ## Structure
 The java-doc is available in ['docs/apidocs/index.html'](docs/apidocs/index.html)
@@ -43,6 +43,22 @@ Main classes hierarchy are:
  1. Make **Resolver** more flexible so that the developer can decide which algorithm to use and this way specialized solver for knapsack problems.
    1. Remove Constant's class and add a __property__ file to manage that.
     
+## Prerequisite
+
+- [Tools]
+  - [Java 8]
+  - [Maven 3.5]
+  
+## How to build it
+1. Build the application using 
+`mvn clean install`
+
+2. Import the project as Maven
+
+## How to Test
+1. The uni-tests are implemented and you can run all the tests using
+`mvn test`
+
 ## How to use this API
 
 This KnapsackSolver java library can be plugs into your application spicing up your solution.
@@ -55,18 +71,6 @@ import com.mobiquityinc.packer.Packer;
         System.out.println(pack);
 ...
 ```
-
-## Prerequisite
-
-- [Tools](#tools)
-  - [Java 8](#java8)
-  - [Maven 3.5](#maven)
-  
-## How to use it
-1. Build the application using 
-`mvn clean install`
-
-2. Import the project as Maven
 
 ## Input file format
 Input file can consist of multiple lines in format like this:
