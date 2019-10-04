@@ -41,11 +41,12 @@ public class KnapsackProblemSolverImpl implements KnapsackProblemSolver {
 				 * If the item does not fits within the actual weight take the previous solution
 				 * for the current weight.
 				 */
-				if (item.getWeight() > columnWeight) {
+				int weight = item.getWeight().intValue();
+				if (weight > columnWeight) {
 					possibleSolutions[row][columnWeight] = possibleSolutions[row - 1][columnWeight];
 				} else {
 					/* Cost obtained when adding this item cost + previous cost without this item */
-					double tookItemCost = item.getCost() + possibleSolutions[row - 1][columnWeight - item.getWeight()];
+					double tookItemCost = item.getCost() + possibleSolutions[row - 1][columnWeight - weight];
 					
 					/*
 					 * If the total cost after adding this item is better than the previous value

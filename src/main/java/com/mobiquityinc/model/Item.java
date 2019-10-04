@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 public class Item {
 	private int id;
-	private int weight;
+	private Double weight;
 	private Double cost;
 
 }

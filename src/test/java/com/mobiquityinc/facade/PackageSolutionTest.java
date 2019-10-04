@@ -65,10 +65,10 @@ public class PackageSolutionTest {
 	private static List<ItemPackage> buildItemPackageList() {
 		List<ItemPackage> itemPackageList = new ArrayList<>();
 
-		itemPackageList.add(buildItemPackage(new Item(5, 30, 9.0), new Item(6, 46, 48.0), new Item(1, 53, 45.0),
-				new Item(4, 72, 76.0), new Item(3, 78, 3.0)));
+		itemPackageList.add(buildItemPackage(new Item(5, 30.0, 9.0), new Item(6, 46.0, 48.0), new Item(1, 53.0, 45.0),
+				new Item(4, 72.0, 76.0), new Item(3, 78.0, 3.0)));
 
-		itemPackageList.add(buildItemPackage(new Item(1, 15, 34.0)));
+		itemPackageList.add(buildItemPackage(new Item(1, 15.0, 34.0)));
 
 		return itemPackageList;
 

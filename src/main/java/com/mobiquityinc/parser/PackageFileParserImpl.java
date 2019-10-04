@@ -75,7 +75,7 @@ public class PackageFileParserImpl implements PackageFileParser {
 			validator.validate(index, weight.intValue(), cost, maxPackageWeight);
 
 			if (weight <= maxPackageWeight) {
-				items.add(Item.builder().id(index).weight(weight.intValue()).cost(cost).build());
+				items.add(Item.builder().id(index).weight(weight).cost(cost).build());
 			}
 
 			itemMatcher.end();

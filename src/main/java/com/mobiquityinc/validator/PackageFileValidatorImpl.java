@@ -6,7 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.mobiquityinc.exception.APIException;
 import com.mobiquityinc.util.Constants;
-import com.mobiquityinc.util.DelimeterConstants;
 
 /**
  * This component is responsible for all validations.
@@ -38,7 +37,7 @@ public class PackageFileValidatorImpl implements PackageFileValidator {
 
 	@Override
 	public boolean isValidInputLineFormat(String line) throws APIException {
-		boolean lineMatches = line.matches(DelimeterConstants.VALID_INPUT_LINE_FORMAT.getDelimeter());
+		boolean lineMatches = line.matches("^\\d+\\s*?:\\s*\\(\\s*\\d+\\s*,\\s*\\d*\\.{0,1}\\d+\\s*,\\s*€\\d*\\.{0,1}\\d+\\s*\\).*$");
 		if (!lineMatches)
 			throw new APIException("The input line doesn't match with the valid format.");
 
@@ -48,14 +47,14 @@ public class PackageFileValidatorImpl implements PackageFileValidator {
 	@Override
 	public void validateMaxItemAmountConstraint(int itemAmount) throws APIException {
 		if (itemAmount > Constants.MAX_ITEMS_AMOUNT) {
-			throw new APIException(Constants.PACKAGE_ITEM_WEIGHT_LIMIT_EXCEDED_MESSAGE);
+			throw new APIException("Invalid weight for item");
 		}
 	}
 
 	@Override
 	public void validateMaxCostConstraint(Double cost) throws APIException {
 		if (cost > Constants.MAX_ITEM_COST) {
-			throw new APIException(Constants.PACKAGE_ITEM_COST_EXCEDED_MESSAGE);
+			throw new APIException("Package limit of price exceded");
 		}
 
 	}
@@ -63,7 +62,7 @@ public class PackageFileValidatorImpl implements PackageFileValidator {
 	@Override
 	public void validatePackageWeightLimit(int pkgWeighLimit) throws APIException {
 		if (pkgWeighLimit > Constants.MAX_PACKAGE_WEIGHT) {
-			throw new APIException(Constants.PACKAGE_LIMIT_WEIGHT_EXCEDED_MESSAGE);
+			throw new APIException("Package limit of weight exceded");
 		}
 
 	}
@@ -71,7 +70,7 @@ public class PackageFileValidatorImpl implements PackageFileValidator {
 	@Override
 	public void validateMaxItemWeightConstraint(int itemWeight) throws APIException {
 		if (itemWeight > Constants.MAX_ITEM_WEIGHT) {
-			throw new APIException(Constants.PACKAGE_LIMIT_WEIGHT_EXCEDED_MESSAGE);
+			throw new APIException("Package limit of weight exceded");
 		}
 
 	}

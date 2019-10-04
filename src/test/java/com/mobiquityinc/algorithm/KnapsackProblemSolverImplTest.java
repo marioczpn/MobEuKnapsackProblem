@@ -21,8 +21,8 @@ public class KnapsackProblemSolverImplTest {
 	@BeforeAll
 	public static void init() {
 		knapsackSolver = new KnapsackProblemSolverImpl();
-		itemPackage = buildItemPackage(new Item(5, 30, 9.0), new Item(6, 46, 48.0), new Item(1, 53, 45.0),
-				new Item(4, 72, 76.0), new Item(3, 78, 3.0));
+		itemPackage = buildItemPackage(new Item(5, 30.0, 9.0), new Item(6, 46.0, 48.0), new Item(1, 53.0, 45.0),
+				new Item(4, 72.0, 76.0), new Item(3, 78.0, 3.0));
 	}
 
 	@Test
@@ -30,7 +30,7 @@ public class KnapsackProblemSolverImplTest {
 		Item item = new Item();
 		List<Item> expectedValue = new ArrayList<>();
 		item.setId(4);
-		item.setWeight(72);
+		item.setWeight(72.0);
 		item.setCost(76.0);
 		expectedValue.add(item);
 

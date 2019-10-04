@@ -12,7 +12,7 @@ import com.mobiquityinc.algorithm.KnapsackProblemSolverImpl;
 import com.mobiquityinc.exception.APIException;
 import com.mobiquityinc.model.Item;
 import com.mobiquityinc.model.ItemPackage;
-import com.mobiquityinc.util.Constants;
+import com.mobiquityinc.util.DelimeterConstants;
 
 import lombok.AllArgsConstructor;
 
@@ -42,10 +42,10 @@ public class PackageSolutionImpl implements PackageSolution {
 
 	public String displaySolution(List<Item> solution) {
 		if (CollectionUtils.isEmpty(solution)) {
-			return Constants.EMPTY_SOLUTION_PLACEHOLDER;
+			return DelimeterConstants.EMPTY_SOLUTION_PLACEHOLDER.getDelimeter();
 		}
 		return solution.stream().sorted(Comparator.comparing(Item::getId)).mapToInt(Item::getId)
-				.mapToObj(Integer::toString).collect(Collectors.joining(Constants.RESULT_DELIMETER));
+				.mapToObj(Integer::toString).collect(Collectors.joining(DelimeterConstants.COMMA_SEPARATOR.getDelimeter()));
 	}
 
 }
