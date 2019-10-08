@@ -25,8 +25,4 @@ public class ItemPackage {
 
 	private List<Item> packedItems;
 
-	public Double getTotalItemsWeight() {
-		return this.packedItems.stream().mapToDouble(Item::getWeight).sum();
-	}
-
 }
