@@ -5,7 +5,7 @@ import java.util.function.Function;
 import com.mobiquityinc.exception.APIException;
 
 @FunctionalInterface
-public interface ThrowingInputReaderException<T, R, E extends APIException>  {
+public interface ThrowingInputReaderException<T, R, E extends Throwable>  {
 	R apply(T t) throws E;
 	
 	static <T, R, E extends APIException> Function<T,R> wrap(ThrowingInputReaderException<T,R,E> f) {
