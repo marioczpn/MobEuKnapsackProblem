@@ -40,23 +40,15 @@ public class PackageInputReaderImpl implements PackageInputReader {
 		
 		try (Stream<String> linesStream = Files.lines(Paths.get(filePath))) {
 
-			return linesStream.map(this::validateAndParseSingleLine).collect(Collectors.toList());
+			return linesStream.map(ThrowingInputReaderException.wrap(this::validateAndParseSingleLine)).collect(Collectors.toList());
 
 		} catch (IOException e) {
 			throw new APIException(e.getMessage(), e);
 		}
 	}
 
-	private ItemPackage validateAndParseSingleLine(String line) {
-		ItemPackage itemsPackaged = new ItemPackage();
-		try {
-			itemsPackaged = parser.parseSingleLine(line);
-
-		} catch (APIException e) {
-			System.err.println( e.getMessage ( ) + "/n The stack trace is :") ;
-		}
-
-		return itemsPackaged;
+	private ItemPackage validateAndParseSingleLine(String line) throws APIException {
+		return  parser.parseSingleLine(line);
 	}
 
 
